@@ -16,7 +16,7 @@ interface movieDetailsProps {
 }
 
 export default async function MovieDetails({ params: { id } }: movieDetailsProps) {
-  const movies = await getMoviesVideos(id);
+  //   const movies = await getMoviesVideos(id);
   //   const videos = movies.map((movie: any) => ({
   //     id: movie.id,
   //     iso_639_1: movie.iso_639_1,
@@ -29,7 +29,7 @@ export default async function MovieDetails({ params: { id } }: movieDetailsProps
   //     size: movie.size,
   //     type: movie.type,
   //   }));
-  const details: any = await getMoviesDetails(id);
+  const details = await getMoviesDetails(id);
   const popoularMovies = await getPopularMovies();
   return (
     <div>
@@ -52,7 +52,7 @@ export default async function MovieDetails({ params: { id } }: movieDetailsProps
             </p>
             <p className="text-gray-200 text-sm">
               Genres:{" "}
-              {details?.genres.map((item: any) => (
+              {details?.genres.map((item) => (
                 <span key={item?.id} className="text-white font-medium mr-1">
                   {item?.name},
                 </span>
