@@ -17,18 +17,18 @@ interface movieDetailsProps {
 
 export default async function MovieDetails({ params: { id } }: movieDetailsProps) {
   const movies = await getMoviesVideos(id);
-  const videos = movies.map((movie: any) => ({
-    id: movie.id,
-    iso_639_1: movie.iso_639_1,
-    iso_3166_1: movie.iso_3166_1,
-    key: movie.key,
-    name: movie.name,
-    official: movie.official,
-    published_at: movie.published_at,
-    site: movie.site,
-    size: movie.size,
-    type: movie.type,
-  }));
+  //   const videos = movies.map((movie: any) => ({
+  //     id: movie.id,
+  //     iso_639_1: movie.iso_639_1,
+  //     iso_3166_1: movie.iso_3166_1,
+  //     key: movie.key,
+  //     name: movie.name,
+  //     official: movie.official,
+  //     published_at: movie.published_at,
+  //     site: movie.site,
+  //     size: movie.size,
+  //     type: movie.type,
+  //   }));
   const details: any = await getMoviesDetails(id);
   const popoularMovies = await getPopularMovies();
   return (
