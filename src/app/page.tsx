@@ -1,7 +1,6 @@
 import CarouselBanner from "@/components/CarouselBanner";
 import MovieContainer from "@/components/MovieContainer";
 import { getNowPlayingMovies, getPopularMovies, getTopRatedMovies, getUpcomingMovies } from "@/lib/getMovies";
-import Image from "next/image";
 
 export default async function Home() {
   const nowPlayingMovies = await getNowPlayingMovies();
