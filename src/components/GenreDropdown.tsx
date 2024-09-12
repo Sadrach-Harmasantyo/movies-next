@@ -21,7 +21,7 @@ export default async function GenreDropdown() {
   const response = await fetch(url, options);
   const data = (await response.json()) as Genres;
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <DropdownMenu>

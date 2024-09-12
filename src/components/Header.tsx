@@ -7,7 +7,7 @@ import { ModeToggle } from "./ModeToggle";
 
 export default function Header() {
   return (
-    <div className="w-full flex items-center justify-between p-5 bg-mainColor">
+    <div className="w-full flex items-center justify-between p-5 bg-mainColor sticky top-0 z-50">
       <Link href="/">
         <Image src="/logo.png" alt="Logo" width={120} height={100} priority={true} className="cursor-pointer w-40 h-auto" />
       </Link>
