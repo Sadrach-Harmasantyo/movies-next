@@ -1,6 +1,6 @@
 import MovieContainer from "@/components/MovieContainer";
 import { getImagePath } from "@/lib/getImagePath";
-import { getMoviesDetails, getMoviesVideos, getPopularMovies } from "@/lib/getMovies";
+import { getMoviesDetails, getPopularMovies } from "@/lib/getMovies";
 import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
