@@ -20,6 +20,18 @@ export type SearchResults = {
   results: Movie[];
   total_pages: number;
   total_results: number;
+
+  id?: number;
+  backdrop_path?: string;
+  original_title?: string;
+  title?: string;
+  overview?: string;
+  vote_average?: number;
+  vote_count?: number;
+  release_date?: string;
+  genres?: { id: number; name: string }[];
+  tagline?: string;
+  status?: string;
 };
 
 export type Genre = {
