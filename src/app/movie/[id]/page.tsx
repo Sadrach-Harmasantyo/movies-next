@@ -15,6 +15,20 @@ interface movieDetailsProps {
   };
 }
 
+type MovieDetails = {
+  id?: number;
+  backdrop_path?: string;
+  original_title?: string;
+  title?: string;
+  overview?: string;
+  vote_average?: number;
+  vote_count?: number;
+  release_date?: string;
+  genres?: { id: number; name: string }[];
+  tagline?: string;
+  status?: string;
+};
+
 export default async function MovieDetails({ params: { id } }: movieDetailsProps) {
   //   const movies = await getMoviesVideos(id);
   //   const videos = movies.map((movie: any) => ({
@@ -29,14 +43,14 @@ export default async function MovieDetails({ params: { id } }: movieDetailsProps
   //     size: movie.size,
   //     type: movie.type,
   //   }));
-  const details = await getMoviesDetails(id);
+  const details: MovieDetails = await getMoviesDetails(id);
   const popoularMovies = await getPopularMovies();
   return (
     <div>
       <div className="px-10">
         <div className="py-10 flex flex-col lg:flex-row items-center gap-5">
           <div className="w-full lg:w-1/2 min-h-96 rounded-md overflow-hidden group">
-            <Image src={getImagePath(details?.backdrop_path)} alt={details?.title} width={1920} height={1080} className="w-full h-full object-cover shadow-md shadow-gray-900 drop-shadow-xl group-hover:scale-110 duration-500" />
+            <Image src={getImagePath(details?.backdrop_path)} alt="" width={1920} height={1080} className="w-full h-full object-cover shadow-md shadow-gray-900 drop-shadow-xl group-hover:scale-110 duration-500" />
           </div>
           <div className="w-full lg:w-1/2 flex flex-col gap-2">
             <h2 className="text-2xl font-semibold underline decoration-[1px]">{details?.original_title}</h2>
@@ -52,7 +66,7 @@ export default async function MovieDetails({ params: { id } }: movieDetailsProps
             </p>
             <p className="text-gray-200 text-sm">
               Genres:{" "}
-              {details?.genres.map((item) => (
+              {details?.genres?.map((item) => (
                 <span key={item?.id} className="text-white font-medium mr-1">
                   {item?.name},
                 </span>
