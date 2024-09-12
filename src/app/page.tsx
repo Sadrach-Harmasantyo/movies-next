@@ -1,3 +1,5 @@
+import CarouselBanner from "@/components/CarouselBanner";
+import MovieContainer from "@/components/MovieContainer";
 import { getNowPlayingMovies, getPopularMovies, getTopRatedMovies, getUpcomingMovies } from "@/lib/getMovies";
 import Image from "next/image";
 
@@ -9,7 +11,13 @@ export default async function Home() {
 
   return (
     <main>
-      <h1>Next.js movies app</h1>
+      <CarouselBanner />
+      <div className="flex flex-col space-y-2">
+        <MovieContainer movies={nowPlayingMovies} title="Now Playing" />
+        <MovieContainer movies={upcomingMovies} title="Upcoming" />
+        <MovieContainer movies={topRatedMovies} title="Top Rated" />
+        <MovieContainer movies={popularMovies} title="Popular" />
+      </div>
     </main>
   );
 }
